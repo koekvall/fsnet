@@ -155,27 +155,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// start_profiler
-SEXP start_profiler(SEXP str);
-RcppExport SEXP _fsnet_start_profiler(SEXP strSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< SEXP >::type str(strSEXP);
-    rcpp_result_gen = Rcpp::wrap(start_profiler(str));
-    return rcpp_result_gen;
-END_RCPP
-}
-// stop_profiler
-SEXP stop_profiler();
-RcppExport SEXP _fsnet_stop_profiler() {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(stop_profiler());
-    return rcpp_result_gen;
-END_RCPP
-}
 // quad_appr_ll
 double quad_appr_ll(arma::mat linpred, const arma::mat& linpred_old, const arma::mat& ab_diffs);
 RcppExport SEXP _fsnet_quad_appr_ll(SEXP linpredSEXP, SEXP linpred_oldSEXP, SEXP ab_diffsSEXP) {
@@ -242,8 +221,6 @@ static const R_CallMethodDef CallEntries[] = {
     {"_fsnet_soft_t", (DL_FUNC) &_fsnet_soft_t, 2},
     {"_fsnet_solve_constr_l1", (DL_FUNC) &_fsnet_solve_constr_l1, 5},
     {"_fsnet_log1mexp", (DL_FUNC) &_fsnet_log1mexp, 1},
-    {"_fsnet_start_profiler", (DL_FUNC) &_fsnet_start_profiler, 1},
-    {"_fsnet_stop_profiler", (DL_FUNC) &_fsnet_stop_profiler, 0},
     {"_fsnet_quad_appr_ll", (DL_FUNC) &_fsnet_quad_appr_ll, 3},
     {"_fsnet_newton_step", (DL_FUNC) &_fsnet_newton_step, 11},
     {"_fsnet_prox_newt", (DL_FUNC) &_fsnet_prox_newt, 10},

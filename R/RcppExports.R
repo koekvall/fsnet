@@ -41,14 +41,6 @@ log1mexp <- function(x) {
     .Call(`_fsnet_log1mexp`, x)
 }
 
-start_profiler <- function(str) {
-    .Call(`_fsnet_start_profiler`, str)
-}
-
-stop_profiler <- function() {
-    .Call(`_fsnet_stop_profiler`)
-}
-
 quad_appr_ll <- function(linpred, linpred_old, ab_diffs) {
     .Call(`_fsnet_quad_appr_ll`, linpred, linpred_old, ab_diffs)
 }
